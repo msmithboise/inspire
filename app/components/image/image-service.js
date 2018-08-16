@@ -9,13 +9,13 @@ const imgApi = axios.create({
 });
 
 export default class ImageService {
-	getImage(draw) {
-		console.log("hello from ImageService")
+	getImage(callback) {
 		imgApi().then(res => {
 			
-			let image = res.data.url
+			let imgUrl = res.data.url
+			console.log(imgUrl)
 			
-			draw(image)
+			callback(imgUrl)
 		// ^^^^^^^ How do you call this function?
 		// console.log("http://www.splashbase.co/api/v1/images/random")
 			// console.log('Image Data:', res.data)
