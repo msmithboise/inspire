@@ -1,4 +1,6 @@
 .heroImage{
 height: 100%;
 width: auto;
+background-size: cover;
+background-repeat: no-repeat;
 }
