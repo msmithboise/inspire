@@ -8,3 +8,11 @@ background-repeat: no-repeat;
 .author{
  visibility: hidden;
 }
+
+p{
+    color: white;
+}
+
+h1{
+    color: white;
+}
