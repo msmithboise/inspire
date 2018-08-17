@@ -38,9 +38,9 @@ function drawList(list) {
 		else {
 			template += 	`
 			<div>
-			<p>${todo.user}</p>
+			
 			<p>${todo.description}</p>
-			<p>completed</p>
+			<p>Nice Job!</p>
 	
 			<button type="button" onclick="app.controllers.todoController.removeTodo('${todo._id}')">Delete</button>
 	
