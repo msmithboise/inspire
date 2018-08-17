@@ -19,15 +19,32 @@ function drawList(list) {
 	`
 	for (let i = 0; i < list.length; i++) {
 		const todo = list[i];
+		if(!todo.completed){
+
+		
         template +=
 		`
 		<div>
-		<p>${todo.user}</p>
+		
 		<p>${todo.description}</p>
-		<p>${todo.completed}</p>
+		<input onchange="app.controllers.todoController.toggleTodoStatus('${todo._id}')" type="checkbox"></input>
+
+
 		<div>
 		`
-		
+		}
+		else {
+			template += 	`
+			<div>
+			<p>${todo.user}</p>
+			<p>${todo.description}</p>
+			<p>completed</p>
+	
+			<button>Delete</button>
+	
+			<div>
+			`
+		}
 	}
 	document.getElementById('todo').innerHTML = template
 	//WHAT IS MY PURPOSE?
@@ -73,6 +90,8 @@ export default class TodoController {
 	}
 
 	removeTodo(todoId) {
+
+		todoService.removeTodo(todoId, drawList)
 		// ask the service to run the remove todo with this id
 
 		// ^^^^ THIS LINE OF CODE PROBABLY LOOKS VERY SIMILAR TO THE toggleTodoStatus

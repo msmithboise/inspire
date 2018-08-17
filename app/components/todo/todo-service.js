@@ -20,10 +20,11 @@ export default class TodoService {
 		todoApi.get()
 		.then((res) => { // <-- WHY IS THIS IMPORTANT????
 			
-			let list = res.data.data.map(rawList => {
+			todoList = res.data.data.map(rawList => {
 				return new Todo(rawList)
 			})
-			draw(list)
+
+			draw(todoList)
 		})
 		.catch(logError)
 	}
@@ -38,22 +39,29 @@ export default class TodoService {
 			.catch(logError)
 	}
 
-	toggleTodoStatus(todoId) {
+	toggleTodoStatus(todoId, getTodos) {
 		// MAKE SURE WE THINK THIS ONE THROUGH
 		//STEP 1: Find the todo by its index **HINT** todoList
 
-		var todo = {} ///MODIFY THIS LINE
+		var todo = todoList.find(todo=> todo._id ==todoId)
+		todo.completed = !todo.completed 
 
 		//STEP 2: Change the completed flag to the opposite of what is is **HINT** todo.completed = !todo.completed
 		todoApi.put(todoId, todo)
-			.then(function (res) {
+			.then(res => {
+				getTodos()
 				
 				//DO YOU WANT TO DO ANYTHING WITH THIS?
 			})
 			.catch(logError)
 	}
 
-	removeTodo() {
+	removeTodo(todoId, draw) {
+todoApi.delete(todoId)
+.then(res => {
+	this.getTodos(draw)
+})
+
 		// Umm this one is on you to write.... The method is a DELETE
 
 	}
