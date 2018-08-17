@@ -12,10 +12,12 @@ function getTodos() {
 function drawList(list) {
 	
 	let template = `
+	<div>
 		<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
 		<input type="text" name="description" placeholder="Add to-do's here!">
 		<button type="submit">Submit</button
 		</form>
+	</div>
 	`
 	for (let i = 0; i < list.length; i++) {
 		const todo = list[i];
@@ -40,7 +42,7 @@ function drawList(list) {
 			<p>${todo.description}</p>
 			<p>completed</p>
 	
-			<button>Delete</button>
+			<button type="button" onclick="app.controllers.todoController.removeTodo('${todo._id}')">Delete</button>
 	
 			<div>
 			`
