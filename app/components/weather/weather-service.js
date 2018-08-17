@@ -7,8 +7,18 @@ const weatherApi = axios.create({
 	timeout: 3000
 });
 
-export default class WeatherService {
+function tempConverter(far){
+var newTemp = (far * 9/5) 
+let newFar = newTemp - 459.67
+return Math.floor(newFar)
+}
 
+export default class WeatherService {
+constructor(){
+
+	
+
+}
 	getWeather(callback) {
 		console.log('Calling the Weatherman')
 		weatherApi().then(function (res) {
@@ -17,16 +27,15 @@ export default class WeatherService {
 			// Have you ever wanted to know the temperature measured in kelvin? That is what this data returns!
 			// res.data.temp is the temperature in Kelvin
 			// You should probably convert the temperature data to either F or C
-			let far = res.data.main.temp
+			let far = tempConverter(res.data.main.temp)
 			callback(far);
 		})
 	}
+	
 
-	tempConverter(far){
-	var newTemp = (far * 9/5) 
-	let newFar = newTemp - 459.67
-	return newFar
-	}
-
-
+	
+	
 }
+
+
+

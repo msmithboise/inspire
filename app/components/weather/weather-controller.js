@@ -18,6 +18,7 @@ export default class WeatherController {
 		//this will fire off get weather right away
 		this.getWeather()
 		
+		
 		weatherService.getWeather(drawWeather)
 	}
 	getWeather() {
