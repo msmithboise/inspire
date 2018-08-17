@@ -13,9 +13,6 @@ function drawImage(imgUrl){
 export default class ImageController {
 constructor(){
     imageService.getImage(drawImage)
-
-     
-
 }
 //     getImage(){
 //     imageService.getImage(data =>{

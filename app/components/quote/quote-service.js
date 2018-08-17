@@ -5,7 +5,7 @@ let apiUrl = url + encodeURIComponent(url2);
 
 import Quote from '../../components/models/quote.js'
 
-let quote = new Quote()
+
 
 const quoteApi = axios.create({
 	baseURL: apiUrl,
@@ -14,10 +14,14 @@ const quoteApi = axios.create({
 
 
 export default class QuoteService {
-	getQuote(callWhenDone) {
+	getQuote(callback) {
 		quoteApi().then((res) => {
-			callWhenDone(res.data)
-			console.log(res.data)
+			let quote = res.data
+
+
+			callback(new Quote(quote))
+			
 		})
 	}
 }
+
