@@ -12,11 +12,10 @@ function drawQuote(quote) {
 	  <div>
 
 		  <p>${quote.quote}</p>
-
-		 <div>
-		  <button class="toggle" onclick="app.controllers.quoteController.clickButton(${quote.author})">See Author</button>
-		  <p>${quote.author}</p>
-		 
+		  
+		  <button onclick="buttonToggle()">See Author</button>
+		 <div >
+		  <p id="click" style="visibility: hidden;" class="author">${quote.author}</p>
 		</div>
 		  
 		  
@@ -26,23 +25,14 @@ function drawQuote(quote) {
 	}
 
 
-	function clickButton() {
-		var click = document.getElementsByClassName('toggle');
-		if (click.style.visibility === 'hidden') {
-			click.style.visibility = 'visible';
-		} else {
-			click.style.visibility = 'hidden';
-		}
-	}
 	
-	clickButton()
+
 
 
 
 export default class QuoteController {
 	constructor() {
 		this.getQuote()
-		
 		
 		
 
@@ -54,6 +44,8 @@ export default class QuoteController {
 			console.log('What is the quote', quote)
 		})
 	}
+
+
 
 	
 

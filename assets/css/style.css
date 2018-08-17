@@ -4,3 +4,7 @@ width: auto;
 background-size: cover;
 background-repeat: no-repeat;
 }
+
+.author{
+ visibility: hidden;
+}
