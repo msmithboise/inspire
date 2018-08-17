@@ -12,8 +12,9 @@ function getTodos() {
 function drawList(list) {
 	
 	let template = `
-		<form>
-		onsubniut
+		<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
+		<input type="text" name="description" placeholder="Add to-do's here!">
+		<button type="submit">Submit</button
 		</form>
 	`
 	for (let i = 0; i < list.length; i++) {

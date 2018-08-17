@@ -1,7 +1,7 @@
 import Todo from "../models/todo.js"
 
 const todoApi = axios.create({
-	baseURL: 'https://bcw-sandbox.herokuapp.com/api/MikeS/todos/',
+	baseURL: 'https://bcw-sandbox.herokuapp.com/api/Michael/todos/',
 	timeout: 3000
 });
 
@@ -47,6 +47,7 @@ export default class TodoService {
 		//STEP 2: Change the completed flag to the opposite of what is is **HINT** todo.completed = !todo.completed
 		todoApi.put(todoId, todo)
 			.then(function (res) {
+				
 				//DO YOU WANT TO DO ANYTHING WITH THIS?
 			})
 			.catch(logError)
