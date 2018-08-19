@@ -13,9 +13,9 @@ function drawQuote(quote) {
 
 		  <p>${quote.quote}</p>
 		  
-		  <button onclick="buttonToggle()">See Author</button>
+		  <button onclick="buttonToggle()" class="quote-widget">See Author</button>
 		 <div >
-		  <p id="click" style="visibility: hidden;" class="author">${quote.author}</p>
+		  <p id="click" style="visibility: hidden;" class="author quote-widget">${quote.author}</p>
 		</div>
 		  
 		  

@@ -27,10 +27,21 @@ constructor(){
 			// Have you ever wanted to know the temperature measured in kelvin? That is what this data returns!
 			// res.data.temp is the temperature in Kelvin
 			// You should probably convert the temperature data to either F or C
+			
 			let far = tempConverter(res.data.main.temp)
 			callback(far);
 		})
 	}
+
+	getWeatherCity(cb) {
+		
+		weatherApi().then(function(res){
+			let weatherCity = res.data.name
+			cb(weatherCity);
+		})
+
+	}
+
 	
 
 	

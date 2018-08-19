@@ -15,7 +15,7 @@ function drawList(list) {
 	<div>
 		<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
 		<input type="text" name="description" placeholder="Add to-do's here!">
-		<button type="submit">Submit</button
+		
 		</form>
 	</div>
 	`
@@ -26,9 +26,10 @@ function drawList(list) {
 		
         template +=
 		`
-		<div>
+		<div class="stickynote">
 		
-		<p>${todo.description}</p>
+
+		<h4>${todo.description}</h4>
 		<input onchange="app.controllers.todoController.toggleTodoStatus('${todo._id}')" type="checkbox"></input>
 
 
@@ -37,10 +38,10 @@ function drawList(list) {
 		}
 		else {
 			template += 	`
-			<div>
+			<div class="stickynote">
 			
-			<p>${todo.description}</p>
-			<p>Nice Job!</p>
+			<h4>${todo.description}</h4>
+			
 	
 			<button type="button" onclick="app.controllers.todoController.removeTodo('${todo._id}')">Delete</button>
 	

@@ -12,11 +12,60 @@ background-repeat: no-repeat;
 p{
     color: white;
     text-shadow: 2px 2px #3b3b3b;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5vw;
+    
 
 }
 
 h1{
     color: white;
     text-shadow: 2px 2px #3b3b3b;
+    font-family: 'Open Sans', sans-serif;
 
+}
+
+.weather-widget{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.quote-widget{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.card {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.199);
+    padding: 30px;
+    box-shadow: 1px 1px 2px #e7e7e7;
+    border-radius: 4px;
+    margin: 20px 50px;
+  }
+
+
+  .stickynote {
+    display: flex;
+    align-items: center;
+    background:#feff9c;
+    width: auto;
+    height: auto;
+    margin: 20px 50px;
+    transform: rotate(2deg);
+  }
+
+  
+
+  h4{
+    font-family: 'Nothing You Could Do', cursive;
+  }
+
+.height{
+    height: 60vh;
 }
