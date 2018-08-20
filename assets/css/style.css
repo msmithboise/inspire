@@ -39,8 +39,8 @@ h3{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
-    margin: 20px 50px;
+    
+    
     
 
 }
@@ -115,7 +115,19 @@ h3{
     color: white;
     text-shadow: 2px 2px #3b3b3b;
     font-family: 'Open Sans', sans-serif;
-    font-size: 7vw;
+    font-size: 10vh;
+    align-self: center; 
+    padding: 1vh
+}
+
+.greet{
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px #3b3b3b;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 4vw;
+    font-size: 4vh;
     align-self: center; 
     padding: 1vh
 }

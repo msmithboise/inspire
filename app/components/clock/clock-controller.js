@@ -49,7 +49,7 @@ function greet() {
         let template =
         `
         <div>
-        <p>Good Morning</p>
+        <p class="greet">Good Morning</p>
         </div>
         `
         document.getElementById('greeting').innerHTML = template
@@ -61,7 +61,7 @@ function greet() {
         let template =
         `
         <div>
-        <p>Good Afternoon</p>
+        <p class="greet">Good Afternoon</p>
         </div>
         `
 
@@ -71,7 +71,7 @@ function greet() {
         let template =
         `
         <div>
-        <p>Good Evening</p>
+        <p class="greet">Good Evening</p>
         </div>
         `
 
