@@ -49,8 +49,9 @@ function drawList(list) {
 			`
 		}
 	}
-	document.getElementById('todo').innerHTML = template
 
+	document.getElementById('todo').innerHTML = template
+	drawQuantity()
 
 	//WHAT IS MY PURPOSE?
 	//BUILD YOUR TODO TEMPLATE HERE

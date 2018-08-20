@@ -109,3 +109,13 @@ h3{
     font-size: 1.0vw;
 }
 
+.clock{
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px #3b3b3b;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 7vw;
+    align-self: center; 
+    padding: 1vh
+}

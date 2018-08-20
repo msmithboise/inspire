@@ -3,30 +3,91 @@ import ClockService from "./clock-service.js"
 let clockService = new ClockService
 
 
-function drawClock(clock){
-    
-    let template = 
-    // for (let i = 0; i < clock.length; i++) {
-    //     const newClock = clock[i];
-    //     template += 
+function drawClock(clock) {
+
+    let template =
+       
         `
         <div>
         <p>${clock.dayOfTheWeek}</p>
         </div>
         `
-        
-        document.getElementById('day').innerHTML = template
-    }
-    
 
+    document.getElementById('day').innerHTML = template
+}
+
+
+
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    if (h > 12) {
+        h -= 12
+    }
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('time').innerHTML =
+        h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+startTime()
+
+
+function checkTime(i) {
+    if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+    return i;
+}
+checkTime()
+
+function greet() {
+    var today = new Date()
+    var curHr = today.getHours()
+    
+    if (curHr < 12) {
+        let template =
+        `
+        <div>
+        <p>Good Morning</p>
+        </div>
+        `
+        document.getElementById('greeting').innerHTML = template
+
+
+
+       
+    } else if (curHr < 18) {
+        let template =
+        `
+        <div>
+        <p>Good Afternoon</p>
+        </div>
+        `
+
+        document.getElementById('greeting').innerHTML = template
+        
+    } else {
+        let template =
+        `
+        <div>
+        <p>Good Evening</p>
+        </div>
+        `
+
+        document.getElementById('greeting').innerHTML = template
+    }
+}
+
+greet()
 
 
 
 export default class ClockController {
-constructor(){
-    clockService.getClock(drawClock)
-}
+    constructor() {
+        clockService.getClock(drawClock)
+    }
 
 
-    
+
 }
