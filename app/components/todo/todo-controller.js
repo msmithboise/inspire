@@ -50,16 +50,39 @@ function drawList(list) {
 		}
 	}
 	document.getElementById('todo').innerHTML = template
+
+
 	//WHAT IS MY PURPOSE?
 	//BUILD YOUR TODO TEMPLATE HERE
 	
 	//DONT FORGET TO LOOP
 }
 
+function drawTodoQuantity(list){
+	let template = ''
+	let quantity = list.length
+		
+		
+		template +=
+		`
+		<div>
+		<p>Items on your list: ${quantity}</p>
+		</div>
+		`
+	
+	document.getElementById('quantity').innerHTML = template
+
+}
+
+function drawQuantity(){
+todoService.getTodos(drawTodoQuantity)
+}
 
 export default class TodoController {
 	constructor() {
-	    getTodos()
+		getTodos()
+		
+		drawQuantity()
 		// IF YOU WANT YOUR TODO LIST TO DRAW WHEN THE PAGE FIRST LOADS WHAT SHOULD YOU CALL HERE???
 	}
 	// You will need four methods
@@ -99,6 +122,8 @@ export default class TodoController {
 
 		// ^^^^ THIS LINE OF CODE PROBABLY LOOKS VERY SIMILAR TO THE toggleTodoStatus
 	}
+
+	
 
 
 
