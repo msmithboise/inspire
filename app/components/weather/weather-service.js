@@ -35,11 +35,18 @@ constructor(){
 
 	getWeatherCity(cb) {
 		
-		weatherApi().then(function(res){
+		weatherApi().then(res =>{
 			let weatherCity = res.data.name
 			cb(weatherCity);
 		})
 
+	}
+
+	getWeatherIcon(callback){
+		weatherApi().then (res =>{
+			let weatherIcon = res.data.sys.country
+			callback(weatherIcon);
+		})
 	}
 
 	

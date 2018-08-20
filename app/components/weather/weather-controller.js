@@ -25,6 +25,17 @@ function drawWeatherCity(weatherCity){
 	document.getElementById("city").innerHTML = template
 }
 
+function drawWeatherIcon(weatherIcon){
+	let template = 
+	`
+	<div>
+	 <p>${weatherIcon}<p>
+	 
+	</div>
+	`
+	document.getElementById("icon").innerHTML = template
+}
+
 
 export default class WeatherController {
 
@@ -37,6 +48,8 @@ export default class WeatherController {
 		weatherService.getWeatherCity(drawWeatherCity)
 		
 		weatherService.getWeather(drawWeather)
+
+		weatherService.getWeatherIcon(drawWeatherIcon)
 	}
 	getWeather() {
 		weatherService.getWeather(weather => {
@@ -48,6 +61,12 @@ export default class WeatherController {
 	getWeatherCity(){
 		weatherService.getWeatherCity(city =>{
 			console.log(city);
+		})
+	}
+
+	getWeatherIcon(){
+		weatherService.getWeatherIcon( icon => {
+			console.log(icon);
 		})
 	}
 }
