@@ -14,7 +14,7 @@ function drawList(list) {
 	let template = `
 	<div>
 		<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
-		<input type="text" name="description" placeholder="Add to-do's here!">
+		<input type="text" name="description" placeholder="What's crackin?">
 		
 		</form>
 	</div>
@@ -26,10 +26,10 @@ function drawList(list) {
 		
         template +=
 		`
-		<div class="stickynote">
+		<div>
 		
 
-		<h4>${todo.description}</h4>
+		<h1>${todo.description}</h1>
 		<input onchange="app.controllers.todoController.toggleTodoStatus('${todo._id}')" type="checkbox"></input>
 
 
@@ -38,12 +38,12 @@ function drawList(list) {
 		}
 		else {
 			template += 	`
-			<div class="stickynote">
+			<div>
 			
-			<h4>${todo.description}</h4>
+			<h1>${todo.description}</h1>
 			
 	
-			<button type="button" onclick="app.controllers.todoController.removeTodo('${todo._id}')">Delete</button>
+			<i class="fa fa-trash" aria-hidden="true"><button type="button" onclick="app.controllers.todoController.removeTodo('${todo._id}')">Trash it</button></i>
 	
 			<div>
 			`
@@ -108,6 +108,11 @@ export default class TodoController {
 		todoService.addTodo(todo, getTodos)
 		//^^^^^^^ EXAMPLE OF HOW TO GET YOUR TOODOS AFTER AN EDIT
 	}
+
+
+	
+	
+
 
 	toggleTodoStatus(todoId) {
 		// asks the service to edit the todo status

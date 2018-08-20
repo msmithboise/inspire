@@ -25,10 +25,31 @@ h1{
 
 }
 
+h3{
+    
+    color: white;
+    text-shadow: 2px 2px #3b3b3b;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 7vw;
+    align-self: center;
+
+}
+
+.day-widget{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    margin: 20px 50px;
+    
+
+}
+
 .weather-widget{
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
+    justify-content: space-between;
 }
 
 .quote-widget{
@@ -60,6 +81,16 @@ h1{
     transform: rotate(2deg);
   }
 
+  .todo-card {
+    display: flex;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.199);
+    padding: 30px;
+    box-shadow: 1px 1px 2px #e7e7e7;
+    border-radius: 4px;
+    
+  }
+
   
 
   h4{
@@ -67,5 +98,6 @@ h1{
   }
 
 .height{
-    height: 60vh;
+    height: 25vh;
 }
+

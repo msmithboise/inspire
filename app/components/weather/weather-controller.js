@@ -6,7 +6,7 @@ function drawWeather(newFar){
 	let template = 
 	`
 	<div>
-	 <p>${newFar}<p>
+	 <p>${newFar}°<p>
 	 
 	</div>
 	`
