@@ -50,6 +50,14 @@ constructor(){
 		})
 	}
 
+	getWeatherDesc(callback){
+		
+		weatherApi().then (res =>{
+			let weatherDesc = res.data.weather[0].main
+			callback(weatherDesc);
+		})
+	}
+
 	
 
 	

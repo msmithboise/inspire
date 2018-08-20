@@ -37,6 +37,18 @@ function drawWeatherIcon(weatherIcon){
 }
 
 
+function drawWeatherDesc(weatherDesc){
+	let template = 
+	`
+	<div>
+	 <p>${weatherDesc}</p>
+	 
+	</div>
+	`
+	document.getElementById("weather-description").innerHTML = template
+}
+
+
 export default class WeatherController {
 
 	constructor() {
@@ -50,6 +62,8 @@ export default class WeatherController {
 		weatherService.getWeather(drawWeather)
 
 		weatherService.getWeatherIcon(drawWeatherIcon)
+
+		weatherService.getWeatherDesc(drawWeatherDesc)
 	}
 	getWeather() {
 		weatherService.getWeather(weather => {
@@ -67,6 +81,13 @@ export default class WeatherController {
 	getWeatherIcon(){
 		weatherService.getWeatherIcon( icon => {
 			console.log(icon);
+		})
+	}
+
+
+	getWeatherDesc(){
+		weatherService.getWeatherDesc( description => {
+			console.log(description);
 		})
 	}
 }
