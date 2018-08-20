@@ -21,3 +21,4 @@ export default class App {
 }
 
 window.app = new App()  
+

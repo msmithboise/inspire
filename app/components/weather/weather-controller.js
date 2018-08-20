@@ -29,7 +29,7 @@ function drawWeatherIcon(weatherIcon){
 	let template = 
 	`
 	<div>
-	 <p>${weatherIcon}<p>
+	 <img src="http://openweathermap.org/img/w/${weatherIcon}.png">
 	 
 	</div>
 	`

@@ -43,8 +43,9 @@ constructor(){
 	}
 
 	getWeatherIcon(callback){
+		
 		weatherApi().then (res =>{
-			let weatherIcon = res.data.sys.country
+			let weatherIcon = res.data.weather[0].icon
 			callback(weatherIcon);
 		})
 	}
