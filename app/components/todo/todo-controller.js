@@ -29,7 +29,7 @@ function drawList(list) {
 		<div>
 		
 
-		<h1>${todo.description}</h1>
+		<p>${todo.description}</p>
 		<input onchange="app.controllers.todoController.toggleTodoStatus('${todo._id}')" type="checkbox"></input>
 
 
@@ -40,7 +40,7 @@ function drawList(list) {
 			template += 	`
 			<div>
 			
-			<h1>${todo.description}</h1>
+			<p>${todo.description}</p>
 			
 	
 			<i class="fa fa-trash" aria-hidden="true"><button type="button" onclick="app.controllers.todoController.removeTodo('${todo._id}')">Trash it</button></i>
@@ -66,7 +66,7 @@ function drawTodoQuantity(list){
 		template +=
 		`
 		<div>
-		<p>Items on your list: ${quantity}</p>
+		<p class="items-remaining">Items remaining: (${quantity})</p>
 		</div>
 		`
 	

@@ -88,6 +88,7 @@ h3{
     padding: 30px;
     box-shadow: 1px 1px 2px #e7e7e7;
     border-radius: 4px;
+    margin: 20px 50px;
     
   }
 
@@ -98,6 +99,13 @@ h3{
   }
 
 .height{
-    height: 25vh;
+    height: 35vh;
+}
+
+.items-remaining{
+    color: white;
+    text-shadow: 2px 2px #3b3b3b;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.0vw;
 }
 
